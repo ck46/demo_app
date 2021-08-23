@@ -1,5 +1,9 @@
 import os
-import cv2
+# import cv2
+try:
+    from PIL import Image
+except ImportError:
+    import Image
 import pytesseract
 import datetime
 
@@ -17,9 +21,10 @@ bp = Blueprint('images', __name__)
 # pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract'
 
 def get_text_from_image(image_path):
-    img = cv2.imread(image_path)
+    # img = cv2.imread(image_path)
+    # Image.open(image)
     # img = cv2.cvtColor(prev, cv2.COLOR_BGR2GRAY)
-    return pytesseract.image_to_string(img)
+    return pytesseract.image_to_string(Image.open(image))
 
 UPLOADS_PATH = join(dirname(realpath(__file__)), 'static/image_uploads')
 
