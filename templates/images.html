@@ -20,7 +20,7 @@
         <td>{{ upload['filename'] }}</td>
         <td>{{ upload['created_at'] }}</td>
         <td>
-            <a href="{{ url_for('images.image_text', id=upload['id']) }}">View Book</a>
+            <a href="{{ url_for('images.image_text', id=upload['id']) }}">View Image</a>
         </td>
     </tr>
   {% endfor %}

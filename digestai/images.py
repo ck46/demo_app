@@ -24,9 +24,9 @@ def get_text_from_image(image_path):
     # img = cv2.imread(image_path)
     # Image.open(image)
     # img = cv2.cvtColor(prev, cv2.COLOR_BGR2GRAY)
-    return pytesseract.image_to_string(Image.open(image))
+    return pytesseract.image_to_string(Image.open(image_path))
 
-UPLOADS_PATH = join(dirname(realpath(__file__)), 'static/image_uploads')
+UPLOADS_PATH = 'static/image_uploads' #join(dirname(realpath(__file__)), 'static/image_uploads')
 
 # UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = {'png', 'PNG', 'jpg', 'jpeg', 'JPG', 'JPEG'}
